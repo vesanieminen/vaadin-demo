@@ -1,6 +1,8 @@
 FROM openjdk:21 AS BUILD
 COPY . /app/
 WORKDIR /app/
+ARG offlinekey
+ENV VAADIN_OFFLINE_KEY=$offlinekey
 RUN ./mvnw clean test package -Pproduction
 
 FROM openjdk:21
