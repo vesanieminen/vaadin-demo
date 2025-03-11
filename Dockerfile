@@ -9,4 +9,4 @@ FROM openjdk:21
 COPY --from=BUILD /app/target/*.jar /app/app.jar
 WORKDIR /app/
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
